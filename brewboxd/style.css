@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0e0503;
+    color: #f8f8f8;
+}
+
+/* HEADER */
+
+.header-container {
+    background: #4a0e0e;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a,
+.open-modal-label {
+    color: #E8D1A7;
+    text-decoration: none;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.nav-links a:hover,
+.open-modal-label:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* HERO */
+
+.hero {
+    height: 80vh;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(to bottom, #0e0503, transparent 15%),
+        linear-gradient(to top, #0e0503, transparent 15%),
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+        url("img/cafe-hero.jpg") center/cover;
+}
+
+.hero h1 {
+    font: 700 4rem 'Playfair Display', serif;
+    margin-bottom: 10px;
+    color: #E8D1A7;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* BOTÃO */
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #743014;
+    color: #E8D1A7;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 1px solid #8e4427;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #8e4427;
+    transform: translateY(-3px);
+}
+
+/* CARDS */
+
+.scard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 60px;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(116,48,20,.15);
+    opacity: 0;
+    transition: .3s;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.info {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 15px;
+    color: #E8D1A7;
+    background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+}
+
+.info h3,
+.rating,
+.location {
+    margin: 0;
+}
+
+/* MODAL */
+
+.modal-checkbox {
+    display: none;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-checkbox:checked ~ .modal-overlay {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    padding: 40px;
+    background: #2b120a;
+    border: 1px solid #4a0e0e;
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #E8D1A7;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.input-group input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 12px;
+    background: #431f13;
+    border: 1px solid #5a2d1d;
+    border-radius: 4px;
+    color: #fff;
+}
